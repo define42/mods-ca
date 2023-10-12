@@ -7,5 +7,5 @@ else
     echo "**** update-ca-certificates already installed, skipping ****"
 fi
 
-cp /data/ca/ /usr/local/share/ca-certificates/ -f
+cp /data/ca/* /usr/local/share/ca-certificates/ -f
 update-ca-certificates
