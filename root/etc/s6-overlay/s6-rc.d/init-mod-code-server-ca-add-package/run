@@ -1,0 +1,11 @@
+#!/usr/bin/with-contenv bash
+
+if ! dpkg -s update-ca-certificates >/dev/null 2>&1; then
+    echo "**** Adding update-ca-certificates to package install list ****"
+    echo "update-ca-certificates" >> /mod-repo-packages-to-install.list
+else
+    echo "**** update-ca-certificates already installed, skipping ****"
+fi
+
+cp /data/ca/ /usr/local/share/ca-certificates/ -f
+update-ca-certificates
